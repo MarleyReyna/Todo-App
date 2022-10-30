@@ -5,7 +5,6 @@ import Footer from './components/Footer.vue';
 </script>
 
 <template>
-    <h1 class="sr-only">Todo App</h1>
     <Header />
     <Main />
     <Footer />
