@@ -73,7 +73,7 @@ export default {
 <template>
     <main>
         <form @submit.prevent="submitTodo">
-            <button class="submit" type="submit">
+            <button class="submit" type="submit" aria-label="Submit todo">
                 <div class="gradient-helper"/>
             </button>
             <input class="global-font" placeholder="Create a new todo..." v-model='todo'/>
@@ -89,12 +89,12 @@ export default {
                 @end="dragging = false">
                     <template #item="{element}">
                         <li :id="element.id">
-                            <button class="submit" :class="{complete: !element.active}" @click="completeTodo(element.id)" type="button">
+                            <button class="submit" :class="{complete: !element.active}" @click="completeTodo(element.id)" type="button" aria-label="Complete todo">
                                 <div class="gradient-helper"/>
                                 <svg xmlns="http://www.w3.org/2000/svg" alt="Todo Completed" width="11" height="9"><path fill="none" stroke="#FFF" stroke-width="2" d="M1 4.304L3.696 7l6-6"/></svg>
                             </button>
-                            <button class="todo global-font" :class="{complete: !element.active}" @click="completeTodo(element.id)">{{ element.task }}</button>
-                            <button class="remove" @click="deleteTodo(element.id)"><svg alt="Remove Todo" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="#494C6B" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg></button>
+                            <button class="todo global-font" :class="{complete: !element.active}" @click="completeTodo(element.id)" aria-label="Complete todo and drag to rearrange">{{ element.task }}</button>
+                            <button class="remove" @click="deleteTodo(element.id)" aria-label="Delete todo"><svg alt="Remove Todo" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="#494C6B" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg></button>
                         </li>
                     </template>
                 </draggable>
@@ -102,18 +102,18 @@ export default {
             <div class="bottom">
                 <p class="global-font">{{ todos.filter((val) => val.active).length }} items left</p>
                 <section class="todo-actions">
-                    <button @click="shown = null" :class="{'active': shown === null}" type="button">All</button>
-                    <button @click="shown = true" :class="{'active': shown === true}" type="button">Active</button>
-                    <button @click="shown = false" :class="{'active': shown === false}" type="button">Completed</button>
+                    <button @click="shown = null" :class="{'active': shown === null}" type="button" aria-label="Show all todos">All</button>
+                    <button @click="shown = true" :class="{'active': shown === true}" type="button" aria-label="Show active todos">Active</button>
+                    <button @click="shown = false" :class="{'active': shown === false}" type="button" aria-label="Show completed todos">Completed</button>
                 </section>
-                <button class="global-font" @click="clearCompleted">Clear Completed</button>
+                <button class="global-font" @click="clearCompleted" aria-label="Clear all completed todos">Clear Completed</button>
             </div>
         </section>
 
         <section class="todo-actions">
-            <button @click="shown = null" :class="{'active': shown === null}" type="button">All</button>
-            <button @click="shown = true" :class="{'active': shown === true}" type="button">Active</button>
-            <button @click="shown = false" :class="{'active': shown === false}" type="button">Completed</button>
+            <button @click="shown = null" :class="{'active': shown === null}" type="button" aria-label="Show all todos">All</button>
+            <button @click="shown = true" :class="{'active': shown === true}" type="button" aria-label="Show active todos">Active</button>
+            <button @click="shown = false" :class="{'active': shown === false}" type="button" aria-label="Show completed todos">Completed</button>
         </section>
     </main>
 </template>
