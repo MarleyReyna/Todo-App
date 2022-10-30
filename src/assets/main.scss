@@ -17,7 +17,7 @@
     font-family: 'Josefin Sans', sans-serif;
     background-size: 100% 29%;
     background-repeat: no-repeat;
-    background-image: url('./assets/bg-mobile-dark.jpg');
+    background-image: url('./bg-mobile-dark.jpg');
     transition: all 300ms ease;
 }
 
@@ -29,7 +29,7 @@
 
 #app.light{
     background-color: #FAFAFA;
-    background-image: url('./assets/bg-mobile-light.jpg');
+    background-image: url('./bg-mobile-light.jpg');
 
     .submit{
         background: #E3E4F1;
@@ -123,12 +123,12 @@ button:hover{
 
 @media only screen and (min-width: 37.5rem){
     #app{
-        background-image: url('./assets/bg-desktop-dark.jpg');
+        background-image: url('./bg-desktop-dark.jpg');
         background-size: contain;
     }
 
     #app.light{
-        background-image: url('./assets/bg-desktop-light.jpg');
+        background-image: url('./bg-desktop-light.jpg');
     }
 }
 
